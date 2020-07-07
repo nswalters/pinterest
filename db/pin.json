@@ -1,0 +1,22 @@
+{
+  "MyFirstPin": {
+    "title": "First Pin",
+    "boardId": "e81fb4befb6a4aecaa4543770cf06568",
+    "url": "www.google.com"
+  },
+  "MySecondPin": {
+    "title": "Second Pin",
+    "boardId": "e81fb4befb6a4aecaa4543770cf06568",
+    "url": "duckduckgo.com"
+  },
+  "AnotherPin": {
+    "title": "AWW!",
+    "boardId": "d6e244123a1a4b1688d228025f52d40b",
+    "url": "www.reddit.com/r/aww/"
+  },
+  "YetAnotherPin": {
+    "title": "When you need to get an image out of your head.",
+    "boardId": "d6e244123a1a4b1688d228025f52d40b",
+    "url": "https://www.reddit.com/r/Eyebleach/"
+  }
+}
