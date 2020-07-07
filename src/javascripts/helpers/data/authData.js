@@ -3,17 +3,21 @@ import 'firebase/auth';
 
 const authDiv = $('#auth');
 const logoutButton = $('#navbar-logout-button');
+const homeDiv = $('#home');
+const boardsDiv = $('#boards');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.error('Logged In: ', user.email);
       authDiv.addClass('hide');
+      homeDiv.addClass('hide');
       logoutButton.removeClass('hide');
+      boardsDiv.removeClass('hide');
     } else {
-      console.error('Logged Out');
-      authDiv.removeClass('hide');
+      boardsDiv.addClass('hide');
       logoutButton.addClass('hide');
+      authDiv.removeClass('hide');
+      homeDiv.removeClass('hide');
     }
   });
 };
