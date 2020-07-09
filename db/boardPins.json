@@ -1,0 +1,22 @@
+{
+  "boardPin1": {
+    "boardId": "e81fb4befb6a4aecaa4543770cf06568",
+    "pinId": "MyFirstPin"
+  },
+  "boardPin2": {
+    "boardId": "e81fb4befb6a4aecaa4543770cf06568",
+    "pinId": "MySecondPin"
+  },
+  "boardPin3": {
+    "boardId": "d6e244123a1a4b1688d228025f52d40b",
+    "pinId": "AnotherPin"
+  },
+  "boardPin4": {
+    "boardId": "d6e244123a1a4b1688d228025f52d40b",
+    "pinId": "YetAnotherPin"
+  },
+  "boardPin5": {
+    "boardId": "75891d5778f043eaa5e5bb3d59b7cb34",
+    "pinId": "Blah"
+  }
+}
