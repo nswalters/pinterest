@@ -4,7 +4,7 @@ const boardMaker = (board) => {
     <div class="card board-card border-0 rounded-0 bg-dark text-light" id=${board.id}>
       <div class="card-header text-center">${board.name}</div>
       <div class="card-body">
-        <h5 class="card-title">Pins will go here</h5>
+        <button class="btn btn-danger delete-board"><i class="far fa-trash-alt">Delete Board</i></button>
       </div>
     </div>
   </div>
