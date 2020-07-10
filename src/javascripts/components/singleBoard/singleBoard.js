@@ -15,6 +15,13 @@ const removePinEvent = (e) => {
 };
 
 const buildBoard = (e) => {
+  // If the 'delete board' button was clicked
+  // then we don't build the single board
+  const deleteBoardSelected = e.target.closest('.delete-board');
+  if (deleteBoardSelected) {
+    return;
+  }
+
   const boardId = e.target.closest('.card').id;
 
   smash.getSingleBoardWithPins(boardId)
