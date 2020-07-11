@@ -1,0 +1,70 @@
+{
+  "board" : {
+    "75891d5778f043eaa5e5bb3d59b7cb34" : {
+      "name" : "The Great Outdoors!",
+      "userId" : "NOPkJZqQk1X73tkxZsYOZYOvD2z2"
+    },
+    "d6e244123a1a4b1688d228025f52d40b" : {
+      "name" : "Favorite Sub Reddits!",
+      "userId" : "NOPkJZqQk1X73tkxZsYOZYOvD2z2"
+    },
+    "e81fb4befb6a4aecaa4543770cf06568" : {
+      "name" : "My First Board",
+      "userId" : "eb194793e67d4155aeaff0eeeba98ef8"
+    }
+  },
+  "boardPins" : {
+    "boardPin1" : {
+      "boardUid" : "e81fb4befb6a4aecaa4543770cf06568",
+      "pinId" : "MyFirstPin"
+    },
+    "boardPin2" : {
+      "boardUid" : "e81fb4befb6a4aecaa4543770cf06568",
+      "pinId" : "MySecondPin"
+    },
+    "boardPin3" : {
+      "boardUid" : "d6e244123a1a4b1688d228025f52d40b",
+      "pinId" : "AnotherPin"
+    },
+    "boardPin4" : {
+      "boardUid" : "d6e244123a1a4b1688d228025f52d40b",
+      "pinId" : "YetAnotherPin"
+    },
+    "boardPin5" : {
+      "boardUid" : "75891d5778f043eaa5e5bb3d59b7cb34",
+      "pinId" : "Blah"
+    }
+  },
+  "pin" : {
+    "AnotherPin" : {
+      "title" : "AWW!",
+      "url" : "www.reddit.com/r/aww/"
+    },
+    "Blah" : {
+      "title" : "Cabelas",
+      "url" : "https://www.cabelas.com"
+    },
+    "MyFirstPin" : {
+      "title" : "First Pin",
+      "url" : "www.google.com"
+    },
+    "MySecondPin" : {
+      "title" : "Second Pin",
+      "url" : "duckduckgo.com"
+    },
+    "YetAnotherPin" : {
+      "title" : "When you need to get an image out of your head.",
+      "url" : "https://www.reddit.com/r/Eyebleach/"
+    }
+  },
+  "user" : {
+    "user1" : {
+      "name" : "AnonPinner",
+      "userId" : "eb194793e67d4155aeaff0eeeba98ef8"
+    },
+    "user2" : {
+      "name" : "Nick Walters",
+      "userId" : "NOPkJZqQk1X73tkxZsYOZYOvD2z2"
+    }
+  }
+}
