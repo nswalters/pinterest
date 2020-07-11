@@ -43,7 +43,8 @@ const buildBoards = (userId) => {
 
       $('body').one('click', '.delete-board', removeBoardEvent);
       $('body').on('click', '.board-card', singleBoard.buildBoard);
-      $('body').on('click', '.add-pin', newPin.showNewPinForm);
+      $('body').one('click', '.add-pin', newPin.showNewPinForm);
+      $('body').on('click', '.form-add-pin-btn', singleBoard.addPinEvent);
     })
     .catch((err) => console.error('Get Boards BROKE! :(', err));
 };
