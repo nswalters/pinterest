@@ -35,8 +35,7 @@ const addPinEvent = (e) => {
 const removePinEvent = (e) => {
   const pinId = e.target.closest('.delete-pin').id;
 
-  // delete pin from database
-  pinData.deletePin(pinId)
+  smash.cascadeDeletePin(pinId)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
       buildBoard(e);

@@ -17,6 +17,20 @@ const getBoardPinsByBoardId = (boardId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getBoardPinsByPinId = (pinId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/boardPins.json?orderBy="pinId"&equalTo="${pinId}"`)
+    .then((response) => {
+      const boardPinsObj = response.data;
+      const boardPins = [];
+      Object.keys(boardPinsObj).forEach((boardPinId) => {
+        boardPinsObj[boardPinId].id = boardPinId;
+        boardPins.push(boardPinsObj[boardPinId]);
+      });
+      resolve(boardPins);
+    })
+    .catch((err) => reject(err));
+});
+
 // Delete Board Pins Record
 const deleteBoardPins = (boardPinsId) => axios.delete(`${baseUrl}/boardPins/${boardPinsId}.json`);
 
@@ -25,6 +39,7 @@ const addBoardPins = (boardPinsObj) => axios.post(`${baseUrl}/boardPins.json`, b
 
 export default {
   getBoardPinsByBoardId,
+  getBoardPinsByPinId,
   deleteBoardPins,
   addBoardPins,
 };

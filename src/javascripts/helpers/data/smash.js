@@ -42,7 +42,22 @@ const cascadeDeleteBoard = (boardId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const cascadeDeletePin = (pinId) => new Promise((resolve, reject) => {
+  pinData.deletePin(pinId)
+    .then(() => {
+      boardPinData.getBoardPinsByPinId(pinId)
+        .then((boardPins) => {
+          boardPins.forEach((boardPin) => {
+            boardPinData.deleteBoardPins(boardPin.id);
+          });
+          resolve();
+        });
+    })
+    .catch((err) => reject(err));
+});
+
 export default {
   getSingleBoardWithPins,
   cascadeDeleteBoard,
+  cascadeDeletePin,
 };
