@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import boardComponent from '../board/board';
 import boardData from '../../helpers/data/boardData';
+import newBoard from '../newBoard/newBoardForm';
 import newPin from '../newPin/newPinForm';
 import singleBoard from '../singleBoard/singleBoard';
 import utils from '../../helpers/utils';
@@ -20,6 +21,10 @@ const removeBoardEvent = (e) => {
       utils.printToDom('.context-area', '');
     })
     .catch((err) => console.error('could not delete board', err));
+};
+
+const addBoardEvent = () => {
+  newBoard.showNewBoardForm();
 };
 
 const buildBoards = (userId) => {
@@ -46,6 +51,7 @@ const buildBoards = (userId) => {
       $('body').on('click', '.board-card', singleBoard.buildBoard);
       $('body').one('click', '.add-pin', newPin.showNewPinForm);
       $('body').on('click', '.form-add-pin-btn', singleBoard.addPinEvent);
+      $('body').on('click', '.add-board-btn', addBoardEvent);
     })
     .catch((err) => console.error('Get Boards BROKE! :(', err));
 };
