@@ -3,8 +3,6 @@
 import utils from '../../helpers/utils';
 
 const showNewBoardForm = () => {
-  // console.error('showNewBoardForm');
-
   const domString = `
   <h2>Add a Board</h2>
   <form>
