@@ -9,11 +9,11 @@ const showNewPinForm = (e) => {
   <h2>Add A Pin</h2>
   <form>
     <div class="form-group">
-      <label for="title">Pin Title</label>
+      <label for="pin-title">Pin Title</label>
       <input type="text" class="form-control" id="pin-title" placeholder="Enter title of pin">
     </div>
     <div class="form-group">
-      <label for="pinUrl">Pin URL</label>
+      <label for="pin-url">Pin URL</label>
       <input type="text" class="form-control" id="pin-url" placeholder="URL">
     </div>
     <div class="form-group">
