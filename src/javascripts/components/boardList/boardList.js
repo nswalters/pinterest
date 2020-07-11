@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import boardComponent from '../board/board';
 import boardData from '../../helpers/data/boardData';
-import newPin from '../newPin/newPin';
+import newPin from '../newPin/newPinForm';
 import singleBoard from '../singleBoard/singleBoard';
 import utils from '../../helpers/utils';
 import smash from '../../helpers/data/smash';
