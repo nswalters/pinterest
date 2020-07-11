@@ -4,16 +4,19 @@ import boardComponent from '../board/board';
 import boardData from '../../helpers/data/boardData';
 import singleBoard from '../singleBoard/singleBoard';
 import utils from '../../helpers/utils';
+import smash from '../../helpers/data/smash';
 
 const removeBoardEvent = (e) => {
   const boardId = e.target.closest('.card').id;
 
-  // delete board from database
-  boardData.deleteBoard(boardId)
+  smash.cascadeDeleteBoard(boardId)
     .then(() => {
-      const user = firebase.auth().currentUser;
+      const userId = firebase.auth().currentUser.uid;
       // eslint-disable-next-line no-use-before-define
-      buildBoards(user.uid);
+      buildBoards(userId);
+
+      // clear the dom for the single-board view after we've deleted a board
+      utils.printToDom('#single-board', '');
     })
     .catch((err) => console.error('could not delete board', err));
 };
