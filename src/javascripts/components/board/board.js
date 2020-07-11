@@ -5,8 +5,8 @@ const boardMaker = (board) => {
       <div class="card-header text-center">${board.name}</div>
       <div class="card-body">
         <div class="d-flex flex-column justify-content-center">
-          <button class="btn btn-warning add-pin"><i class="fas fa-thumbtack">Add Pin</i></button>
-          <button class="btn btn-danger delete-board"><i class="far fa-trash-alt">Delete Board</i></button>
+          <button class="btn btn-warning add-pin" data-id="${board.name}"><i class="fas fa-thumbtack">Add Pin</i></button>
+          <button class="btn btn-danger delete-board ><i class="far fa-trash-alt">Delete Board</i></button>
         </div>
       </div>
     </div>
