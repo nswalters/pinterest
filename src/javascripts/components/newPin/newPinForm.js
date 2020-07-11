@@ -10,17 +10,17 @@ const showNewPinForm = (e) => {
   <form>
     <div class="form-group">
       <label for="title">Pin Title</label>
-      <input type="text" class="form-control" id="title" placeholder="Enter title of pin">
+      <input type="text" class="form-control" id="pin-title" placeholder="Enter title of pin">
     </div>
     <div class="form-group">
       <label for="pinUrl">Pin URL</label>
-      <input type="text" class="form-control" id="pinUrl" placeholder="URL">
+      <input type="text" class="form-control" id="pin-url" placeholder="URL">
     </div>
     <div class="form-group">
       <label for="boardId">Board that Pin will be added to:</label>
       <input id="boardId" class="form-control" type="text" placeholder="${boardName}" readonly>
     </div>
-    <button type="submit" class="btn btn-primary add-pin-btn" data-id="${boardId}">Pin It!</button>
+    <button type="submit" class="btn btn-primary form-add-pin-btn" data-id="${boardId}">Pin It!</button>
   </form>
 `;
 
