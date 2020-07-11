@@ -3,8 +3,6 @@ import 'firebase/auth';
 import boardComponent from '../board/board';
 import boardData from '../../helpers/data/boardData';
 import newBoard from '../newBoard/newBoardForm';
-import newPin from '../newPin/newPinForm';
-import singleBoard from '../singleBoard/singleBoard';
 import utils from '../../helpers/utils';
 import smash from '../../helpers/data/smash';
 
@@ -23,7 +21,26 @@ const removeBoardEvent = (e) => {
     .catch((err) => console.error('could not delete board', err));
 };
 
-const addBoardEvent = () => {
+const addBoardEvent = (e) => {
+  e.preventDefault();
+
+  const userId = firebase.auth().currentUser.uid;
+
+  const newBoardObj = {
+    name: $('#form-board-name').val(),
+    userId,
+  };
+
+  boardData.addBoard(newBoardObj)
+    .then(() => {
+      utils.printToDom('#formArea', '');
+      // eslint-disable-next-line no-use-before-define
+      buildBoards(userId);
+    })
+    .catch((err) => console.error('Could not add board', err));
+};
+
+const showAddBoardForm = () => {
   newBoard.showNewBoardForm();
 };
 
@@ -46,16 +63,13 @@ const buildBoards = (userId) => {
       domString += '</div>';
 
       utils.printToDom('#boards', domString);
-
-      $('body').one('click', '.delete-board', removeBoardEvent);
-      $('body').on('click', '.board-card', singleBoard.buildBoard);
-      $('body').one('click', '.add-pin', newPin.showNewPinForm);
-      $('body').on('click', '.form-add-pin-btn', singleBoard.addPinEvent);
-      $('body').on('click', '.add-board-btn', addBoardEvent);
     })
     .catch((err) => console.error('Get Boards BROKE! :(', err));
 };
 
 export default {
   buildBoards,
+  removeBoardEvent,
+  addBoardEvent,
+  showAddBoardForm,
 };
