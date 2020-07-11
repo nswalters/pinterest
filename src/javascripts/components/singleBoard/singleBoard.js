@@ -1,6 +1,6 @@
 import boardPinData from '../../helpers/data/boardPinData';
 import pinData from '../../helpers/data/pinData';
-import newPin from '../newPin/newPinForm';
+// import newPin from '../newPin/newPinForm';
 import smash from '../../helpers/data/smash';
 import utils from '../../helpers/utils';
 
@@ -89,8 +89,6 @@ const buildBoard = (e) => {
       domString += '</div></div></div>';
 
       utils.printToDom('#single-board', domString);
-      $('body').one('click', '.delete-pin', removePinEvent);
-      $('body').one('click', '.add-pin', newPin.showNewPinForm);
     })
     .catch((err) => console.error('problem with single board', err));
 };
@@ -98,4 +96,5 @@ const buildBoard = (e) => {
 export default {
   buildBoard,
   addPinEvent,
+  removePinEvent,
 };
