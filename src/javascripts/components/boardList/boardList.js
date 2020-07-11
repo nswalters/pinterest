@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import boardComponent from '../board/board';
 import boardData from '../../helpers/data/boardData';
+import newPin from '../newPin/newPinForm';
 import singleBoard from '../singleBoard/singleBoard';
 import utils from '../../helpers/utils';
 import smash from '../../helpers/data/smash';
@@ -15,8 +16,8 @@ const removeBoardEvent = (e) => {
       // eslint-disable-next-line no-use-before-define
       buildBoards(userId);
 
-      // clear the dom for the single-board view after we've deleted a board
-      utils.printToDom('#single-board', '');
+      // Clear the context-area dom sections after we've deleted a board
+      utils.printToDom('.context-area', '');
     })
     .catch((err) => console.error('could not delete board', err));
 };
@@ -42,6 +43,8 @@ const buildBoards = (userId) => {
 
       $('body').one('click', '.delete-board', removeBoardEvent);
       $('body').on('click', '.board-card', singleBoard.buildBoard);
+      $('body').one('click', '.add-pin', newPin.showNewPinForm);
+      $('body').on('click', '.form-add-pin-btn', singleBoard.addPinEvent);
     })
     .catch((err) => console.error('Get Boards BROKE! :(', err));
 };

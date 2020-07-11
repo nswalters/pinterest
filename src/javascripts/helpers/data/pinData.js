@@ -18,10 +18,12 @@ const getPins = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-// Add deletePin function later
 const deletePin = (pinId) => axios.delete(`${baseUrl}/pin/${pinId}.json`);
+
+const addPin = (pinObj) => axios.post(`${baseUrl}/pin.json`, pinObj);
 
 export default {
   getPins,
   deletePin,
+  addPin,
 };
