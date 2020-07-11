@@ -27,6 +27,7 @@ const buildBoards = (userId) => {
     .then((boards) => {
       let domString = `
       <h2 class="text-center">Boards</h2>
+      <button class="btn btn-primary add-board-btn d-block mx-auto mb-5">Add a Board</button>
       <div class="d-flex flex-wrap">
       `;
 
