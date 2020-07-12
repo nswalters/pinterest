@@ -82,7 +82,10 @@ const buildBoard = (e) => {
         if (pin) {
           domString += `<h4 class="card-text">${pin.title}</h4>`;
           domString += `<p class="card-text">${pin.url}</p>`;
+          domString += '<div class="d-flex flex-row justify-content-between mb-4">';
+          domString += `<button class="btn btn-warning edit-pin" data-id=${pin.id}><i class="fas fa-edit">Edit Pin</i></button>`;
           domString += `<button class="btn btn-danger delete-pin" id=${pin.id}><i class="far fa-trash-alt">Delete Pin</i></button>`;
+          domString += '</div>';
         }
       });
 
