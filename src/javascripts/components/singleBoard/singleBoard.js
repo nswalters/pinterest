@@ -1,8 +1,24 @@
 import boardPinData from '../../helpers/data/boardPinData';
 import pinData from '../../helpers/data/pinData';
-// import newPin from '../newPin/newPinForm';
 import smash from '../../helpers/data/smash';
 import utils from '../../helpers/utils';
+
+const editPinEvent = (e) => {
+  e.preventDefault();
+  const editedPinObj = {
+    title: $('#pin-title').val(),
+    url: $('#pin-url').val(),
+  };
+
+  const pinId = $('.form-edit-pin-btn').attr('data-id');
+
+  pinData.updatePin(pinId, editedPinObj)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      buildBoard(e);
+    })
+    .catch((err) => console.error('Unable to update pin', err));
+};
 
 const addPinEvent = (e) => {
   e.preventDefault();
@@ -52,10 +68,11 @@ const buildBoard = (e) => {
     boardId = $('#single-board').find('.board-card')[0].id;
   }
 
-  // If I don't click on the 'addPin' button on a board
+  // If I don't click on the 'addPin' or 'editPin' button on a board
   // Then don't show the 'addPinForm', only show the single board
   const addPinSelected = e.target.closest('.add-pin');
-  if (!addPinSelected) {
+  const editPinSelected = e.target.closest('.edit-pin');
+  if (!addPinSelected && !editPinSelected) {
     utils.printToDom('.context-area', '');
   }
 
@@ -82,7 +99,10 @@ const buildBoard = (e) => {
         if (pin) {
           domString += `<h4 class="card-text">${pin.title}</h4>`;
           domString += `<p class="card-text">${pin.url}</p>`;
+          domString += '<div class="d-flex flex-row justify-content-between mb-4">';
+          domString += `<button class="btn btn-warning edit-pin" data-id=${pin.id}><i class="fas fa-edit">Edit Pin</i></button>`;
           domString += `<button class="btn btn-danger delete-pin" id=${pin.id}><i class="far fa-trash-alt">Delete Pin</i></button>`;
+          domString += '</div>';
         }
       });
 
@@ -97,4 +117,5 @@ export default {
   buildBoard,
   addPinEvent,
   removePinEvent,
+  editPinEvent,
 };
