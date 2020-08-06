@@ -68,11 +68,12 @@ const buildBoard = (e) => {
     boardId = $('#single-board').find('.board-card')[0].id;
   }
 
-  // If I don't click on the 'addPin' or 'editPin' button on a board
+  // If I don't click on the 'addPin','editPin', or 'moveBoard' button on a board
   // Then don't show the 'addPinForm', only show the single board
   const addPinSelected = e.target.closest('.add-pin');
   const editPinSelected = e.target.closest('.edit-pin');
-  if (!addPinSelected && !editPinSelected) {
+  const movePinSelected = e.target.closest('.move-pin');
+  if (!addPinSelected && !editPinSelected && !movePinSelected) {
     utils.printToDom('.context-area', '');
   }
 
@@ -101,6 +102,7 @@ const buildBoard = (e) => {
           domString += `<p class="card-text">${pin.url}</p>`;
           domString += '<div class="d-flex flex-row justify-content-between mb-4">';
           domString += `<button class="btn btn-warning edit-pin" data-id=${pin.id}><i class="fas fa-edit">Edit Pin</i></button>`;
+          domString += `<button class="btn btn-info move-pin" data-pinid=${pin.id} data-boardid=${board.id}><i class="fas fa-external-link-alt">Move to Board</i></button>`;
           domString += `<button class="btn btn-danger delete-pin" id=${pin.id}><i class="far fa-trash-alt">Delete Pin</i></button>`;
           domString += '</div>';
         }
