@@ -7,6 +7,7 @@ import boardList from './components/boardList/boardList';
 import singleBoard from './components/singleBoard/singleBoard';
 import newPin from './components/newPin/newPinForm';
 import editPin from './components/editPin/editPinForm';
+import movePin from './components/movePin/movePin';
 
 import 'bootstrap';
 import '../styles/main.scss';
@@ -29,6 +30,8 @@ const init = () => {
   $('body').on('click', '.board-card', singleBoard.buildBoard);
   $('body').on('click', '.delete-pin', singleBoard.removePinEvent);
   $('body').on('click', '.edit-pin', editPin.showEditPinForm);
+  $('body').on('click', '.move-pin', movePin.showMovePin);
+  $('body').on('click', '.form-move-pin-btn', movePin.movePinEvent);
 };
 
 init();
