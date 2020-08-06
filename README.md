@@ -1,14 +1,14 @@
-= PINTEREST CLONE =
+# PINTEREST CLONE
 
-# Firebase Deployed App
+### Firebase Deployed App
 
 https://pinterestclone-ddaf2.web.app
 
-# Description
+### Description
 
 This is a rudimentary clone of Pinterest, using Firebase as the backend storage. It features full CRUD capabilities, and also is contextual to a specific user (i.e. only boards which were created by the current user are viewable).
 
-== CRUD: ==
+## CRUD:
 
 **CREATE**
 
