@@ -13,6 +13,14 @@ const loginButton = () => {
   $('#google-auth').click(signMeIn);
 };
 
+const logoutEvent = () => {
+  $('#logout-button').click((e) => {
+    e.preventDefault();
+    firebase.auth().signOut();
+  });
+};
+
 export default {
   loginButton,
+  logoutEvent,
 };
